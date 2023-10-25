@@ -1,0 +1,23 @@
+﻿@model EmailDTO
+@{
+    ViewData["Title"] = "SendEmail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Contáctame!</h2>
+<div class="input group col-md-6">
+    
+    @if (ViewBag.msg != null)
+    {
+        <div class="alert alert-success">@ViewBag.msg</div>
+    }
+    <form asp-action="SendEmail" asp-controller="Correo" method="post">
+    <input type="text" asp-for="Para"  class="form-control" />
+    <div class="input-group-btn">
+        <button  class="btn btn-success" type="submit" >
+            
+        </button>
+    </div>
+    </form>
+</div>
+
