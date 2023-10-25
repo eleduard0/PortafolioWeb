@@ -1,0 +1,39 @@
+﻿@model List<TecnologiasModel>
+@{
+    ViewData["Title"] = "Tecnologias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card col-8">
+    <div class="card-header">
+        Tecnologias que manejo
+    </div>
+    <div class="card-body">
+        
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Imagen</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="">@Html.DisplayFor(modelItem=>item.Nombre)</td>
+                        <td>@Html.DisplayFor(modelItem=>item.Descripcion)</td>
+                        <td>
+                            <img src="@Html.DisplayFor(modelItem=>item.URLImagen)" alt="Imagen" style="width:70px; height:70px" />
+                        </td>
+                       
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
